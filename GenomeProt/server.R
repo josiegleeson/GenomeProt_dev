@@ -443,13 +443,13 @@ integration_server <- function(input, output, session) {
   top_level_dir <- getwd()
   
   # create report
-  rmarkdown::render(input = paste0(top_level_dir, "/bin/integration_module/integration_summary_report.Rmd"),
-                    output_file = paste0(top_level_dir, "/", outdir_integ, "/summary_report.html"),
-                    output_format = "html_document",
-                    params = list(
-                      directory = paste0(top_level_dir, "/", outdir_integ),
-                      file = "peptide_info.csv"
-                    ))
+  #rmarkdown::render(input = paste0(top_level_dir, "/bin/integration_module/integration_summary_report.Rmd"),
+  #                  output_file = paste0(top_level_dir, "/", outdir_integ, "/summary_report.html"),
+  #                  output_format = "html_document",
+  #                  params = list(
+  #                    directory = paste0(top_level_dir, "/", outdir_integ),
+  #                    file = "peptide_info.csv"
+  #                  ))
   
   # check files exist
   # if (file.exists(paste0(outdir_integ, "/peptide_info.csv")) && file.exists(paste0(outdir_integ, "/summary_report.html"))) {
@@ -459,9 +459,9 @@ integration_server <- function(input, output, session) {
   #   zip(zipfile = zipfile_path_int, files = files_to_zip_int)
   # }
   
-  if (file.exists(paste0(outdir_integ, "/peptide_info.csv")) && file.exists(paste0(outdir_integ, "/summary_report.html"))) {
+  if (file.exists(paste0(outdir_integ, "/peptide_info.csv"))) {
     # create a zip file with results
-    files_to_zip_int <- c("summary_report.html", "peptide_info.csv", 
+    files_to_zip_int <- c("peptide_info.csv", 
                           "combined_annotations.gtf", "peptides.bed12", 
                           "ORFs.bed12", "transcripts.bed12")
     
