@@ -29,13 +29,6 @@ fasta_import_file <- opt$fasta
 metadata_import_file <- opt$metadata
 gtf_import_file <- opt$gtf
 output_directory <- opt$savepath
- 
-# source("~/Documents/GenomeProt/GenomeProt/R/integration_functions.R")
-# proteomics_import_file <- "~/Documents/miguel_data/august/diann/report.pr_matrix.tsv"
-# fasta_import_file <- "~/Documents/miguel_data/august/database/proteome_database_filt.fasta"
-# metadata_import_file <- "~/Documents/miguel_data/august/database/proteome_database_metadata_filt.txt"
-# gtf_import_file <- "~/Documents/miguel_data/august/database/proteome_database_transcripts.gtf"
-# output_directory <- "~/Documents"
 
 # ------------- import files ------------- #
 
