@@ -118,21 +118,18 @@ ui <- dashboardPage(
                                                   "Rat (R. rattus)" = "rat", 
                                                   "Zebrafish (D. rerio)" = "zebrafish"), 
                                    selected = "human"),
-                       selectInput("database_type", label = "ORFs to be included in proteomedb:", 
-                                   choices = list("canonical", "all"),
-                                   selected = "all"),
                        numericInput("min_orf_length", 
                                     label = "ORF length (amino acids):", 
                                     value = 30),
                        h5(tags$b("Find short (10 to 'ORF length' amino acids) ORFs in UTRs of reference transcripts:")),
-                       checkboxInput("user_find_utr_5_orfs", label = "Upstream 5' ORFs",
+                       checkboxInput("user_find_utr_5_orfs", label = "Upstream 5' ORFs (recommended)",
                                      value = FALSE, width = NULL),
-                       checkboxInput("user_find_utr_3_orfs", label = "Downstream 3' ORFs",
+                       checkboxInput("user_find_utr_3_orfs", label = "Downstream 3' ORFs (not recommended - dramatically increases database size)",
                                      value = FALSE, width = NULL),
                        numericInput("minimum_tx_count", 
                                     label = "Minimum expression threshold (sum per transcript):", 
                                     value = 5),
-                       fileInput("user_reference_gtf", "Upload reference annotation GTF:", NULL, buttonLabel = "Browse...", multiple = FALSE),
+                       fileInput("user_reference_gtf", "Upload reference annotation GTF (gencode/ensembl):", NULL, buttonLabel = "Browse...", multiple = FALSE),
                        
                        # Variable options
                        conditionalPanel(
@@ -154,8 +151,8 @@ ui <- dashboardPage(
                        ),
                        conditionalPanel(
                          condition = "input.input_type == 'gtf_input' & input.sequencing_type == 'long-read'",
-                         fileInput("user_gtf_file", "Upload 'bambu_transcript_annotations.gtf':", NULL, buttonLabel = "Browse...", multiple = FALSE),
-                         fileInput("user_tx_count_file", "Upload 'bambu_transcript_counts.txt' (optional):", NULL, buttonLabel = "Browse...", multiple = FALSE)
+                         fileInput("user_gtf_file", "Upload Bambu GTF ('extended_annotations.gtf' or 'bambu_transcript_annotations.gtf'):", NULL, buttonLabel = "Browse...", multiple = FALSE),
+                         fileInput("user_tx_count_file", "Upload Bambu transcript counts ('counts_transcript.txt' or 'bambu_transcript_counts.txt') (optional):", NULL, buttonLabel = "Browse...", multiple = FALSE)
                        ),
                        conditionalPanel(
                          condition = "input.input_type == 'gtf_input' & input.sequencing_type == 'short-read'",
