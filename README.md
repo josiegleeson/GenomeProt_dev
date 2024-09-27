@@ -37,9 +37,9 @@ Clone this repository:
 git clone https://github.com/josiegleeson/GenomeProt_dev.git
 ```
 
-Obtain the uniprot+openport reference file for your organism and save it into the GenomeProt/data directory.
+Unzip the uniprot+openport reference file in the GenomeProt/data directory.
 ```
-GenomeProt/data/openprot_uniprotDb_hs.txt
+unzip GenomeProt/data/openprot_uniprotDb_hs.txt.zip
 ```
 
 Run the app from the command line:
