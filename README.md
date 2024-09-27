@@ -1,6 +1,6 @@
 # GenomeProt: an integrated proteogenomics analysis platform for long-read RNA-Seq datasets
 
-### Run the shiny application with Docker
+### Run the shiny application with Docker (recommended)
 Make sure you have [Docker](https://docs.docker.com/engine/install/) installed and the application running in the background before you begin.
 
 Open your terminal application and run:
@@ -34,7 +34,7 @@ Command line:
 
 Clone this repository:
 ```
-git clone 
+git clone https://github.com/josiegleeson/GenomeProt_dev.git
 ```
 
 Obtain the uniprot+openport reference file for your organism and save it into the GenomeProt/data directory.
@@ -47,7 +47,7 @@ Run the app from the command line:
 Rscript -e "shiny::runApp('path/to/app/GenomeProt/', host='0.0.0.0', port=3838)"
 ```
 
-Otherwise open the app in RStudio and click 'Run app'.
+Otherwise open the app (server.R, ui.R) in RStudio and click 'Run app'.
 
 ### Troubleshooting a local installation
 The app executes command line tools. Sometimes the local app can't find these tools and it might be easier to install them all into a conda environemnt.
